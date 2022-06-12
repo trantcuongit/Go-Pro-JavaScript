@@ -5,14 +5,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Todo Project</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
-
-
-
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsa vitae eum maxime quia pariatur, quas ad cupiditate tenetur fuga commodi facere asperiores illo ab nemo incidunt placeat voluptate inventore?</p>
+
+    <!-- HTML element -->
+    <input id="todo-title" type="text">
+    <button onclick="addTodo()" >Add Todo</button>
+    <script>
+        
+        // variable comment
+        let cm1 = '//fc simple'
+        let cm2 = '//fc multi'
+        let cm3 = '//loop'
+        let cm4 = '//add todo for button'
+        // variable todo app
+        document.title = 'Change My ToDo'
+        let todo1 = 'make breakfast';
+        let todo2 = 'learn code';
+        let todo3 = 'make lunch';
+
+        // array
+        let todos = ['make breakfast', 'learn code', 'make lunch'];
+        todos.push('another todo');
+
+        // uppercase
+        console.log('hello'.toUpperCase());
+        
+        // render reset array
+        function render() {
+            todos.forEach(function (todoTitle) {
+                let element = document.createElement('div');
+                element.innerText = todoTitle;
+                document.body.appendChild(element);
+            });
+        }
+
+        // loop
+        let elementCm = document.createElement('div');
+        elementCm.innerText = cm3;
+        document.body.appendChild(elementCm);
+        render();
+
+        //add todo      
+        function addTodo() {
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+            todos.push(title);
+            elementCm = document.createElement('div');
+            elementCm.innerText = cm4;
+            document.body.appendChild(elementCm);
+            render();
+        }
+
+        //fc simple
+        elementCm = document.createElement('div');
+        elementCm.innerText = cm1;
+        document.body.appendChild(elementCm);
+        function addTodoSp() {
+            let element = document.createElement('div');
+            element.innerText = todo1;
+            document.body.appendChild(element);
+        }
+        addTodoSp();
+
+        // fc multi
+        elementCm = document.createElement('div');
+        elementCm.innerText = cm2;
+        document.body.appendChild(elementCm);
+        function addTodoMt(addTitle) {
+            let element = document.createElement('div');
+            element.innerText = addTitle;
+            document.body.appendChild(element);
+        }
+        addTodoMt(todo1);
+
+    </script>
 </body>
 </html>
